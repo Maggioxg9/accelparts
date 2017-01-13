@@ -1,0 +1,21 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   Bally.html
+#	new file:   General Parts.html
+#	new file:   Home.html
+#	new file:   IGT.html
+#	new file:   Login.html
+#	new file:   Marketing Items.html
+#	new file:   NRT.html
+#	new file:   Other.html
+#
+# Untracked files:
+#	Spielo.html
+#	res/
+#
+
