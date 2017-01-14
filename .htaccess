@@ -1,0 +1,5 @@
+AddHandler application/x-httpd-php .html
+AddHandler application/x-httpd-php .htm
+
+ErrorDocument 404 /notfound.html
+
