@@ -4,8 +4,9 @@ html, body {
 	border:0;
 	min-width: 1920px;
 	min-height: 100%;
-	background-image: url("res/htmlcontent/brickwall.png");
-	background-repeat: repeat;
+	/*background-image: url("res/htmlcontent/brickwall.png");
+	background-repeat: repeat; */
+	background-color: blue;
 }
 
 div#container {
