@@ -12,6 +12,7 @@ html, body {
 	min-height: 1080px;
 	background-image: url("res/htmlcontent/brickwall.png");
 	background-repeat: repeat;
+	padding-bottom: 1px;
 }
 
 div#container {
