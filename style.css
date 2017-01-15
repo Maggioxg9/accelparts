@@ -65,7 +65,11 @@ div#tablewrapper {
 	height: 100%;
 	margin: auto;
 }
-
+.imgicon{
+	max-width: 200px;
+	width: 45%;
+	height:auto;
+}
 div.itembox{
 	height:220px;
 	width:300px;
