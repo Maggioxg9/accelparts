@@ -71,8 +71,8 @@ div#tablewrapper {
 	height:auto;
 }
 div.itembox{
-	height:220px;
-	width:300px;
+	height:100%;
+	width:100%;
 	margin: auto;
 }
 .clear{
