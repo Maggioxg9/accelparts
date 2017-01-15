@@ -7,7 +7,7 @@ html, body {
 }
 @media {
 	@viewport {
-		width:602px;
+		width:600px;
 	}
 	div#nav {
 		min-width: 602px;
