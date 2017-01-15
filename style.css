@@ -1,13 +1,16 @@
+@media (max-width: 629px) and (min-width: 320px) {
+  @viewport {
+    width: 340px;
+  }
+
 html, body { 
 	margin:0; 
 	padding:0; 
 	border:0;
-	max-width: 100%;
+	max-width: 340px;
 	max-height: 100%;
 	height: 100%;
 	width: 100%;
-	min-width: 1920px;
-	min-height: 720px;
 	background-image: url("res/htmlcontent/brickwall.png");
 	background-repeat: repeat;
 }
@@ -47,7 +50,7 @@ div#accellogo {
 
 div#content {
 	width:100%;
-	height: 100%;
+	height: calc(100% - 70px);
 }
 div#tablewrapper {
 	width:80%;
