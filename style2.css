@@ -27,7 +27,8 @@ div#nav {
 	width: 100%;
 }
 div#navwrap{
-	display:inline-block;
+	display: -webkit-flex;
+   	display: flex;
 	width: 100%;
 	height: 100%;
 	margin: auto;
@@ -51,17 +52,27 @@ div#tablewrapper {
 	margin: auto;
 }
 div#imgwrap {
-	width: 68%;
+	width: 70%;
 	height: 100%;
 	text-align: center;
 	margin-top: 6px;
 	display: inline-block;
 }
-div.imgwraphide {
+div#backwrap {
 	width: 15%;
 	height: 100%;
 	text-align: center;
+	margin-top: 20px;
 	display: inline-block;
+}
+
+div#imgwraphide {
+	width: 15%;
+	height: 100%;
+	text-align: center;
+	word-wrap:break word; 
+	display: inline-block;
+	margin-top: 20px;
 }
 .imglogo{
 	max-width:320px;
@@ -93,29 +104,17 @@ td {
 	margin:auto;
 }
 
-ul.ulright{
-	text-align:right;
-	list-style-type:none;
-}
-ul.ulleft{
-	text-align:left;
-	list-style-type:none;
-}
-
-ul li{
-	display:inline;
-}
-
-ul li a{
+.menu {
 	color:white;
 	text-decoration:none;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size:1em;
+	font-size:.8em;
 	font-weight:900;
-	padding-right: 2em;
 }
-
-ul li a:hover{
+a {
+	text-decoration: none;
+}
+.menu:hover{
 	color:red;
 	font-style:italic;
 }
