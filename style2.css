@@ -33,17 +33,6 @@ div#navwrap{
 	margin: auto;
 }
 
-div.navthird {
-	width: 33%;
-	height: 70px;
-	display: inline-block;
-}
-.halfpercent{
-	width: .5%;
-	height: 70px;
-	display: inline-block;
-}
-
 div#accellogo {
 	background-image: url("res/htmlcontent/partsdept.png");
 	background-repeat: no-repeat;
@@ -54,7 +43,7 @@ div#accellogo {
 
 div#content {
 	width:100%;
-	height: calc(100% - 70px);
+	height: calc(100% - 60px);
 }
 div#tablewrapper {
 	width:100%;
@@ -62,10 +51,17 @@ div#tablewrapper {
 	margin: auto;
 }
 div#imgwrap {
-	width: 100%;
-	height: 90%;
+	width: 32%;
+	height: 100%;
 	text-align: center;
-	padding-top: 6px;
+	margin-top: 6px;
+	display: inline-block;
+}
+div.imgwraphide {
+	width: 32%;
+	height: 100%;
+	text-align: center;
+	display: inline-block;
 }
 .imglogo{
 	max-width:320px;
@@ -97,8 +93,6 @@ td {
 	margin:auto;
 }
 
-
-
 ul.ulright{
 	text-align:right;
 	list-style-type:none;
@@ -116,7 +110,7 @@ ul li a{
 	color:white;
 	text-decoration:none;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size:1.em;
+	font-size:1em;
 	font-weight:900;
 	padding-right: 2em;
 }
