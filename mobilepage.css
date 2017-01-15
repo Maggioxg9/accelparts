@@ -95,6 +95,10 @@ div.itembox{
 .clear{
 	clear:both;
 }
+table#table4{
+	display: none;
+	
+}
 .tclass {
 	width: 100%;
 	height: 100%;
