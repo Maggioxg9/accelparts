@@ -51,14 +51,14 @@ div#tablewrapper {
 	margin: auto;
 }
 div#imgwrap {
-	width: 15%;
+	width: 70%;
 	height: 100%;
 	text-align: center;
 	margin-top: 6px;
 	display: inline-block;
 }
 div.imgwraphide {
-	width: 70%;
+	width: 15%;
 	height: 100%;
 	text-align: center;
 	display: inline-block;
