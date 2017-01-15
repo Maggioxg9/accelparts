@@ -8,8 +8,6 @@ html, body {
 body {
 	
 	background-image: url("res/htmlcontent/accellogo.png");
-	background-repeat: repeat-y;
-	background-color: blue;
 }
 
 div#container {
