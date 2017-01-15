@@ -1,4 +1,4 @@
-@media and (min-width: 1250px) {
+@media and  (max-width: 1250px) and (min-width: 939px) {
   @viewport {
     width: 340px;
   }
