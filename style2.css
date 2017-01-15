@@ -41,11 +41,6 @@ div.navthird {
 	display: inline-block;
 }
 div#accellogo {
-	background-image: url("res/htmlcontent/partsdept.png");
-	background-repeat: no-repeat;
-	width: 500px;
-	height:70px;
-	margin: auto;
 }
 
 div#content {
@@ -103,5 +98,4 @@ ul li a{
 ul li a:hover{
 	color:red;
 	font-style:italic;
-}
 }
