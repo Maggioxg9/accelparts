@@ -9,6 +9,11 @@ html, body {
 	@viewport {
 		width:720px;
 	}
+	div#nav {
+		min-width: 720px;
+		max-width:720px;
+		width:720px;
+	}
 } 
 body {
 	
