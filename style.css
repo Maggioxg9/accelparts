@@ -48,6 +48,7 @@ div.navthird {
 	height: 70px;
 	display: inline-block;
 }
+
 div#accellogo {
 	background-image: url("res/htmlcontent/partsdept.png");
 	background-repeat: no-repeat;
@@ -64,6 +65,12 @@ div#tablewrapper {
 	width:100%;
 	height: 100%;
 	margin: auto;
+}
+.imglogo{
+	max-width:400px;
+	width: 80%;
+	height: auto;
+	max-height: 70px;
 }
 .imgicon{
 	max-width: 200px;
