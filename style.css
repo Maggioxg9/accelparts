@@ -5,11 +5,11 @@ html, body {
 	height:100%;
 	width:100%;
 }
-/* @media only screen {
-	body{
-		height:200%;
+@media {
+	@viewport {
+		width:720px;
 	}
-} */
+} 
 body {
 	
 	background-image: url("res/htmlcontent/brickwall.png");
