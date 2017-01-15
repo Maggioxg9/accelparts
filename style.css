@@ -51,9 +51,8 @@ div.navthird {
 div#accellogo {
 	background-image: url("res/htmlcontent/partsdept.png");
 	background-repeat: no-repeat;
-	width: 80%;
-	max-width:500px;
-	height: auto;
+	width: 400px;
+	height: 70px;
 	margin: auto;
 }
 
