@@ -1,13 +1,14 @@
 html, body { 
 	margin:0; 
 	padding:0; 
-	border:0;  
-	min-height: 100%;
+	border:0;
 	min-width: 100%;
-	max-height: 100%;
 	max-width: 100%;
+	min-height:100%;
+	max-height: 100%;
 	height: 100%;
 	width: 100%;
+	min-width: 1920px;
 	background-image: url("res/htmlcontent/brickwall.png");
 	background-repeat: repeat;
 }
@@ -15,30 +16,51 @@ html, body {
 div#container {
 	width:100%;
 	height:100%;
-
+margin:0; 
+	padding:0; 
+	border:0;
 }
 
 div#nav {
+	 display: -webkit-flex;
+   	 display: flex;
 	background-image: linear-gradient(rgb(0, 0, 0) 0%, rgb(35, 35, 35) 10%, rgb(53, 53, 53) 18%, rgb(35, 35, 35) 31%, rgb(76, 76, 76) 50%, rgb(0, 0, 0) 100%);
  	height:70px;
-
+	width: 100%;
+	min-width: 1920px;
+}
+div.navthird {
+	width: 33%;
+	height: 70px;
+	display: inline-block;
+}
+.halfpercent{
+	width: .5%;
+	height: 70px;
+	display: inline-block;
+}
+div#accellogo {
+	background-image: url("res/htmlcontent/partsdept.png");
+	background-repeat: no-repeat;
+	width: 500px;
+	height:70px;
+	margin: auto;
 }
 
 div#content {
 	width:100%;
-	height: 90%;
+	height: calc(100% - 75px);
 }
 div#tablewrapper {
 	width:80%;
-	height: 100%;
+	height: 95%;
 	margin: auto;
 }
 
 div.itembox{
 	height:220px;
-	width:300px; 
-	display:inline-block;
-	position:relative;
+	width:300px;
+	margin: auto;
 }
 .clear{
 	clear:both;
@@ -48,36 +70,36 @@ div.itembox{
 	height: 100%;
 }
 
+td {
+	align: center;
+	margin:auto;
+}
 
-div#nav ul{
+
+
+ul.ulright{
+	text-align:right;
 	list-style-type:none;
-	padding:1em 0 0 0;
-	margin:0 0 0 1em;
-	border:0;
+}
+ul.ulleft{
+	text-align:left;
+	list-style-type:none;
 }
 
-.ulright{
-	float: right;
-}
-.ulleft{
-	float: left;
-}
-
-div#nav ul li{
+ul li{
 	display:inline;
 }
 
-div#nav ul li a{
+ul li a{
 	color:white;
 	text-decoration:none;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size:1.5em;
+	font-size:1.em;
 	font-weight:900;
-	padding-left:3em;
-	padding-right:2em;
+	padding-right: 2em;
 }
 
-div#nav ul li a:hover{
+ul li a:hover{
 	color:red;
 	font-style:italic;
 }
