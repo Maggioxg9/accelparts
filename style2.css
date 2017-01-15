@@ -52,14 +52,14 @@ div#tablewrapper {
 	margin: auto;
 }
 div#imgwrap {
-	width: 70%;
+	width: 78%;
 	height: 100%;
 	text-align: center;
 	margin-top: 6px;
 	display: inline-block;
 }
 div#backwrap {
-	width: 15%;
+	width: 11%;
 	height: 100%;
 	text-align: center;
 	margin-top: 20px;
@@ -67,7 +67,7 @@ div#backwrap {
 }
 
 div#imgwraphide {
-	width: 15%;
+	width: 10%;
 	height: 100%;
 	text-align: center;
 	word-wrap:break word; 
@@ -108,7 +108,7 @@ td {
 	color:white;
 	text-decoration:none;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size:.8em;
+	font-size:.75em;
 	font-weight:900;
 }
 a {
