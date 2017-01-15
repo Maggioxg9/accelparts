@@ -7,12 +7,12 @@ html, body {
 }
 @media {
 	@viewport {
-		width:720px;
+		width:620px;
 	}
 	div#nav {
-		min-width: 720px;
-		max-width:720px;
-		width:720px;
+		min-width: 620px;
+		max-width:620px;
+		width:620px;
 	}
 } 
 body {
