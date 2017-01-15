@@ -10,6 +10,7 @@ html, body {
 	min-height: 100% !important;
 	background-image: url("res/htmlcontent/brickwall.png");
 	background-repeat: repeat;
+	 border: 1px solid transparent;
 }
 
 div#container {
