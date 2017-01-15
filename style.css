@@ -2,9 +2,12 @@ html, body {
 	margin:0; 
 	padding:0; 
 	border:0;
-	min-width: 1920px;
-	height: 100%;
 }
+/* @media only screen {
+	body{
+		height:200%;
+	}
+} */
 body {
 	
 	background-image: url("res/htmlcontent/brickwall.png");
