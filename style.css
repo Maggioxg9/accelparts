@@ -7,7 +7,7 @@ html, body {
 	height: 100%;
 	width: 100%;
 	min-width: 1920px;
-	min-height: 720px;
+	min-height: 1220px;
 	background-image: url("res/htmlcontent/brickwall.png");
 	background-repeat: repeat;
 }
