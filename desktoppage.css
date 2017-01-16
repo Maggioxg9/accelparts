@@ -116,7 +116,9 @@ div#gallerywrap{
 }
 table#gallerytable{
 	width:100%;
-	
+}
+table#gallerytablemobile{
+	display:none;
 }
 td.tdimage{
 	padding-bottom: 5em;

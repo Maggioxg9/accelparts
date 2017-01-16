@@ -47,7 +47,7 @@ div#content {
 	height: calc(100% - 60px);
 }
 div#tablewrapper {
-	width:100%;
+	width:90%;
 	height: 100%;
 	margin: auto;
 }
@@ -55,7 +55,7 @@ div#imgwrap {
 	width: 78%;
 	height: 100%;
 	text-align: center;
-	margin-top: 12px;
+	margin-top: 0px;
 	display: inline-block;
 }
 div#backwrap {
@@ -67,24 +67,25 @@ div#backwrap {
 }
 
 div#imgwraphide {
-	width: 10%;
+	width: 11%;
 	height: 100%;
 	text-align: center;
 	word-wrap:break word; 
 	display: inline-block;
 	margin-top: 20px;
-	visibility: hidden;
+	visibility:hidden;
 }
 .imglogo{
-	max-width:320px;
+	max-width:500px;
 	width: 80%;
 	height: auto;
 	max-height: 60px;
 }
 .imgicon{
-	max-width: 200px;
+	max-width: 300px;
 	width: 100%;
 	height:auto;
+	margin-top: 20%;
 }
 div.itembox{
 	height:80%;
@@ -98,6 +99,58 @@ div.itembox{
 table#table4{
 	display: none;
 	
+}
+div#pagetitle {
+	width:15%;
+	height: 1.5em;
+	color:black;
+	text-decoration:none;
+	font-family: "Times New Roman", Georgia, Serif;
+	font-size:3.5em;
+	font-weight:900;
+	text-align: right;
+	margin-top: 1em;
+}
+div#gallerywrap{
+	width: 85%;
+	margin: auto;
+}
+table#gallerytable{
+	display:none;
+}
+table#gallerytablemobile{
+	width:100%;
+}
+td.tdimage{
+	padding-bottom: 5em;
+}
+.celldiv{
+	margin:auto;
+}
+.imgcontainer{
+	width: 285px;
+	min-height: 285px;
+	margin:auto;
+}
+.imgcell{
+	max-width: 285px;
+	max-height: 285px;
+	height: auto;
+	margin:auto;
+}
+.descriptioncell {
+	width: 285px;
+	height: 10%;
+	text-align: center;
+	word-wrap: break-word;
+	margin:auto;
+}
+.accelnumbercell {
+	width: 285px;
+	height: 10%;
+	text-align: center;
+	word-wrap: break-word;
+	margin:auto;
 }
 .tclass {
 	width: 100%;
