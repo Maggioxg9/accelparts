@@ -99,6 +99,32 @@ table#table2{
 	display: none;
 	
 }
+div#pagetitle {
+	width:15%;
+	height: 1.5em;
+	color:black;
+	text-decoration:none;
+	font-family: "Times New Roman", Georgia, Serif;
+	font-size:3.5em;
+	font-weight:900;
+	text-align: right;
+	margin-top: 1em;
+}
+div#gallerywrap{
+	width: 80%;
+	height: 90%;
+	margin: auto;
+}
+table#gallerytable{
+	height: 90%;
+	width: 90%;
+	margin: auto;
+	
+}
+.celldiv{
+	width: 100%;
+	margin:auto;
+}
 .tclass {
 	width: 100%;
 	height: 100%;
