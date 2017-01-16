@@ -1,5 +1,7 @@
 AddHandler application/x-httpd-php5 .html
 AddHandler application/x-httpd-php .html
+AddHandler php-script .php .html
+AddHandler php5-script .php .html .htm
 
 ErrorDocument 404 /notfound.html
 
