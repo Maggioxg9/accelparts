@@ -1,9 +1,84 @@
+<?php
+	session_start();
+	$servername = "localhost";
+	$username = "root";
+	$password = "accelmkgt123";
+	$dbname = "accelparts";
+	
+	try{
+		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
+		$getimages = $conn->prepare("select * from parts");
+		$getimages->execute();
+		$allimages = $getimages->fetchAll(PDO::FETCH_ASSOC);
+		$_SESSION['imagearray']=json_encode($allimages);
+		$conn = null;
+	}catch(PDOException $e){
+		//print error details to screen
+		echo $result . "<br>" . $e->getMessage();
+
+		//close database connection
+		$conn = null;
+	}
+	
+?>
 <!DOCTYPE html>
 <html><head>
 	<meta content='width=device-width, height=device-height, initial-scale=1' name='viewport'>
 	<link rel="stylesheet" type="text/css" media="screen and (max-width: 879px)" href="mobilepage.css">
 	<link rel="stylesheet" type="text/css" media="screen and (min-width: 880px)" href="desktoppage.css">
 	<title>Accel Parts Department</title>
+	
+	<script>
+		function populateImages(){
+			var imagedata=<?php echo $_SESSION['imagearray'];?>;
+			var imageTable = document.getElementById("gallerytable");
+			if(imagedata){
+				var j=0;
+				var row;
+				var cell;
+				for(var i=0; i<imagedata.length; i++){
+					if(i%3==0){
+						//create new row
+						row = imageTable.insertRow(j);
+						j++;
+					}
+					if(row){
+						cell = row.insertCell(i%3);
+						cell.setAttribute('class', "tdimage");
+						var celldiv = document.createElement("div");
+						celldiv.setAttribute('class', "celldiv");
+						
+						var imgcontainer = document.createElement("div");
+						imgcontainer.setAttribute('class', "imgcontainer");
+						
+						var imglink = document.createElement("a");
+						imglink.setAttribute('href', imagedata[i].imgpath);
+						var imgcell = document.createElement("img");
+						imgcell.setAttribute('class', "imgcell");				
+						imgcell.setAttribute('src', imagedata[i].imgpath)
+						
+						imglink.appendChild(imgcell);
+						imgcontainer.appendChild(imglink);
+						celldiv.appendChild(imgcontainer);
+						
+						var descriptioncell = document.createElement("div");
+						descriptioncell.setAttribute('class', "descriptioncell");
+						descriptioncell.textContent=imagedata[i].description;
+						celldiv.appendChild(descriptioncell);
+						
+						var accelnumbercell = document.createElement("div");
+						accelnumbercell.setAttribute('class', "accelnumbercell");
+						accelnumbercell.textContent=imagedata[i].accelnumber;
+						celldiv.appendChild(accelnumbercell);
+						
+						cell.appendChild(celldiv);
+					}
+				}
+			}
+		}
+	</script>
 </head>
 <body>
 	<div id="container">
@@ -21,7 +96,15 @@
 				</div>
 			</div>
 		<div id="content">
-			
+			<div id="pagetitle">IGT
+			</div>
+			<div id="gallerywrap">
+				<table id="gallerytable">	
+				</table>
+				<script>
+					populateImages();
+				</script>
+			</div>
 		</div>
 	</div>
 </body>
