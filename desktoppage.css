@@ -121,9 +121,13 @@ table#gallerytable{
 	margin: auto;
 	
 }
-.celldiv{
+td.tdimage{
 	width: 33%;
-	display: inline-block;
+	height: auto;
+	align: center;
+	
+}
+.celldiv{
 	margin:auto;
 }
 .imgcontainer{
