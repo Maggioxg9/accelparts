@@ -119,16 +119,14 @@ table#gallerytable{
 	
 }
 td.tdimage{
-	width: 33%;
-	height: auto;
-	align: center;
-	
+
 }
 .celldiv{
 	margin:auto;
 }
 .imgcontainer{
 	width: 300px;
+	min-height: 300px;
 	margin:auto;
 }
 .imgcell{
