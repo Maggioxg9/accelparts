@@ -78,6 +78,53 @@
 				}
 			}
 		}
+		function populateImagesMobile(){
+			var imagedata=<?php echo $_SESSION['imagearray'];?>;
+			var imageTable = document.getElementById("gallerytablemobile");
+			if(imagedata){
+				var j=0;
+				var row;
+				var cell;
+				for(var i=0; i<imagedata.length; i++){
+					if(i%2==0){
+						//create new row
+						row = imageTable.insertRow(j);
+						j++;
+					}
+					if(row){
+						cell = row.insertCell(i%2);
+						cell.setAttribute('class', "tdimage");
+						var celldiv = document.createElement("div");
+						celldiv.setAttribute('class', "celldiv");
+						
+						var imgcontainer = document.createElement("div");
+						imgcontainer.setAttribute('class', "imgcontainer");
+						
+						var imglink = document.createElement("a");
+						imglink.setAttribute('href', imagedata[i].imgpath);
+						var imgcell = document.createElement("img");
+						imgcell.setAttribute('class', "imgcell");				
+						imgcell.setAttribute('src', imagedata[i].imgpath)
+						
+						imglink.appendChild(imgcell);
+						imgcontainer.appendChild(imglink);
+						celldiv.appendChild(imgcontainer);
+						
+						var descriptioncell = document.createElement("div");
+						descriptioncell.setAttribute('class', "descriptioncell");
+						descriptioncell.textContent=imagedata[i].description;
+						celldiv.appendChild(descriptioncell);
+						
+						var accelnumbercell = document.createElement("div");
+						accelnumbercell.setAttribute('class', "accelnumbercell");
+						accelnumbercell.textContent=imagedata[i].accelnumber;
+						celldiv.appendChild(accelnumbercell);
+						
+						cell.appendChild(celldiv);
+					}
+				}
+			}
+		}
 	</script>
 </head>
 <body>
@@ -85,7 +132,7 @@
 			<div id="nav">
 				<div id="navwrap">
 					<div id="backwrap">
-						<a href="index.html"><span class="menu"><< Home</span></a>
+						<a href="index.html"><span class="menu">Home</span></a>
 					</div>
 					<div id="imgwrap">
 						<a href="index.html"><img class="imglogo" src="res/htmlcontent/partsdept.png"></a>
@@ -99,10 +146,15 @@
 			<div id="pagetitle">Marketing
 			</div>
 			<div id="gallerywrap">
-				<table id="gallerytable">	
+				<table id="gallerytable">
+				</table>
+				<table id="gallerytablemobile">
 				</table>
 				<script>
 					populateImages();
+				</script>
+				<script>
+					populateImagesMobile();
 				</script>
 			</div>
 		</div>
