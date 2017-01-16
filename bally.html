@@ -13,7 +13,7 @@
 		$getimages->execute();
 		$allimages = = $getimages->fetchAll(PDO::FETCH_ASSOC);
 		$_SESSION['imagearray']=json_encode($allimages);
-		
+		echo $_SESSION['imagearray'];
 		$conn = null;
 	}catch(PDOException $e){
 		//print error details to screen
