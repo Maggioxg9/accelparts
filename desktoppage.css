@@ -111,11 +111,11 @@ div#pagetitle {
 	margin-top: 1em;
 }
 div#gallerywrap{
-	width: 80%;
-	height: 90%;
+	width: 85%;
 	margin: auto;
 }
 table#gallerytable{
+	width:100%;
 	
 }
 td.tdimage{
@@ -129,6 +129,7 @@ td.tdimage{
 }
 .imgcontainer{
 	width: 300px;
+	margin:auto;
 }
 .imgcell{
 	max-width: 300px;
@@ -141,12 +142,14 @@ td.tdimage{
 	height: 10%;
 	text-align: center;
 	word-wrap: break-word;
+	margin:auto;
 }
 .accelnumbercell {
 	width: 300px;
 	height: 10%;
 	text-align: center;
 	word-wrap: break-word;
+	margin:auto;
 }
 .tclass {
 	width: 100%;
