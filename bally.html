@@ -41,10 +41,14 @@
 					var celldiv = document.createElement("div");
 					celldiv.setAttribute('class', "celldiv");
 					
+					var imgcontainer = document.createElement("div");
+					imgcontainer.setAttribute('class', "imgcontainer");
+					
 					var imgcell = document.createElement("img");
-					imgcell.setAttribute('class', "imgcell");
+					imgcell.setAttribute('class', "imgcell");				
 					imgcell.setAttribute('src', imagedata[i].imgpath)
-					celldiv.appendChild(imgcell);
+					imgcontainer.appendChild(imgcell);
+					celldiv.appendChild(imgcontainer);
 					
 					var descriptioncell = document.createElement("div");
 					descriptioncell.setAttribute('class', "descriptioncell");

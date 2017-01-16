@@ -125,6 +125,10 @@ table#gallerytable{
 	width: 100%;
 	margin:auto;
 }
+.imgcontainer{
+	
+	width: 25%;
+}
 .imgcell{
 	max-width: 200px;
 	height: auto;
