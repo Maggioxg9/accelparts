@@ -9,11 +9,10 @@
 		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
-		$getimages = $conn->prepare("select * from parts")
+		$getimages = $conn->prepare("select * from parts");
 		$getimages->execute();
-		$allimages = = $getimages->fetchAll(PDO::FETCH_ASSOC);
+		$allimages = $getimages->fetchAll(PDO::FETCH_ASSOC);
 		$_SESSION['imagearray']=json_encode($allimages);
-		echo $_SESSION['imagearray'];
 		$conn = null;
 	}catch(PDOException $e){
 		//print error details to screen
