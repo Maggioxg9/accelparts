@@ -125,25 +125,25 @@ td.tdimage{
 	margin:auto;
 }
 .imgcontainer{
-	width: 280px;
-	min-height: 280px;
+	width: 285px;
+	min-height: 285px;
 	margin:auto;
 }
 .imgcell{
-	max-width: 280px;
-	max-height: 280px;
+	max-width: 285px;
+	max-height: 285px;
 	height: auto;
 	margin:auto;
 }
 .descriptioncell {
-	width: 280px;
+	width: 285px;
 	height: 10%;
 	text-align: center;
 	word-wrap: break-word;
 	margin:auto;
 }
 .accelnumbercell {
-	width: 280px;
+	width: 285px;
 	height: 10%;
 	text-align: center;
 	word-wrap: break-word;
