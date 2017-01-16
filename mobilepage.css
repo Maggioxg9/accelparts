@@ -112,7 +112,7 @@ div#pagetitle {
 	margin-top: 1em;
 }
 div#gallerywrap{
-	width: 85%;
+	width: 100%;
 	margin: auto;
 }
 table#gallerytable{
@@ -128,25 +128,25 @@ td.tdimage{
 	margin:auto;
 }
 .imgcontainer{
-	width: 285px;
-	min-height: 285px;
+	width: 200px;
+	min-height: 200px;
 	margin:auto;
 }
 .imgcell{
-	max-width: 285px;
-	max-height: 285px;
+	max-width: 200px;
+	max-height: 200px;
 	height: auto;
 	margin:auto;
 }
 .descriptioncell {
-	width: 285px;
+	width: 200px;
 	height: 10%;
 	text-align: center;
 	word-wrap: break-word;
 	margin:auto;
 }
 .accelnumbercell {
-	width: 285px;
+	width: 200px;
 	height: 10%;
 	text-align: center;
 	word-wrap: break-word;
