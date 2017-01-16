@@ -34,8 +34,8 @@
 		function populateImages(){
 			var imagedata=<?php echo $_SESSION['imagearray'];?>;
 			var imageTable = document.getElementById("gallerytable");
-			if(imageTable){
-				for(var i=0; i<imageTable.length; i++){
+			if(imagedata){
+				for(var i=0; i<imagedata.length; i++){
 					var row = imageTable.insertRow(i);
 					var cell = row.insertCell(0);
 					var celldiv = document.createElement("div");
@@ -43,17 +43,17 @@
 					
 					var imgcell = document.createElement("div");
 					imgcell.setAttribute('class', "imgcell");
-					imgcell.setAttribute('src', imageTable[i].imagepath)
+					imgcell.setAttribute('src', imagedata[i].imagepath)
 					celldiv.appendChild(imgcell);
 					
 					var descriptioncell = document.createElement("div");
 					descriptioncell.setAttribute('class', "descriptioncell");
-					descriptioncell.textContent=imageTable[i].description;
+					descriptioncell.textContent=imagedata[i].description;
 					celldiv.appendChild(descriptioncell);
 					
 					var accelnumbercell = document.createElement("div");
 					accelnumbercell.setAttribute('class', "accelnumbercell");
-					accelnumbercell.textContent=imageTable[i].accelnumber;
+					accelnumbercell.textContent=imagedata[i].accelnumber;
 					celldiv.appendChild(accelnumbercell);
 					
 					cell.appendChild(celldiv);	
