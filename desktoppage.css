@@ -119,31 +119,31 @@ table#gallerytable{
 	
 }
 td.tdimage{
-
+	padding-bottom: 5em;
 }
 .celldiv{
 	margin:auto;
 }
 .imgcontainer{
-	width: 300px;
-	min-height: 300px;
+	width: 290px;
+	min-height: 290px;
 	margin:auto;
 }
 .imgcell{
-	max-width: 300px;
-	max-height: 300px;
+	max-width: 290px;
+	max-height: 290px;
 	height: auto;
 	margin:auto;
 }
 .descriptioncell {
-	width: 300px;
+	width: 290px;
 	height: 10%;
 	text-align: center;
 	word-wrap: break-word;
 	margin:auto;
 }
 .accelnumbercell {
-	width: 300px;
+	width: 290px;
 	height: 10%;
 	text-align: center;
 	word-wrap: break-word;
