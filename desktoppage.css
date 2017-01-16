@@ -122,11 +122,10 @@ table#gallerytable{
 	
 }
 .celldiv{
-	width: 100%;
+	width: 33%;
 	margin:auto;
 }
 .imgcontainer{
-	
 	width: 300px;
 }
 .imgcell{
