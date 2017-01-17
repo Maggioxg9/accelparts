@@ -31,12 +31,18 @@
 		}
 		if ($uploadOk == 0) {
 			$_SESSION['uploadsuccess']=false;
+			header("Location: ../../adminupload.html");
+			exit();
 			// if everything is ok, try to upload file
 		} else {
 			if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-				echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+				$_SESSION['uploadsuccess']=true;
+				header("Location: ../../adminupload.html");
+				exit();
 			} else {
-				echo json_encode($_FILES);
+				$_SESSION['uploadsuccess']=false;
+				header("Location: ../../adminupload.html");
+				exit();
 			}
 		}
 	}

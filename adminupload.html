@@ -87,6 +87,19 @@
 			<div id="loginwrapper">
 				<div class="uploadbox">
 					<div class="uploaddetails">
+						<?php if(isset($_SESSION['uploadsuccess'])){
+								if($_SESSION['uploadsuccess']==true){
+									echo '<script language="javascript">';
+									echo 'alert("Upload Success")';
+									echo '</script>';
+								}else{
+									echo '<script language="javascript">';
+									echo 'alert("Upload Failed, only image files <4MB are acceptable")';
+									echo '</script>';
+								}
+								unset($_SESSION['uploadsuccess']);
+							}
+						?>
 							<span class="formfont">Select a Category:</span>
 							<select name="categoryname" form="formupload">
 								<option value="volvo">Bally</option>
