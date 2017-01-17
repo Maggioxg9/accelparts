@@ -52,14 +52,14 @@ div#tablewrapper {
 	margin: auto;
 }
 div#imgwrap {
-	width: 78%;
+	width: 72%;
 	height: 100%;
 	text-align: center;
 	margin-top: 8px;
 	display: inline-block;
 }
 div#backwrap {
-	width: 11%;
+	width: 14%;
 	height: 100%;
 	text-align: center;
 	margin-top: 20px;
@@ -74,7 +74,7 @@ div#uploadhide {
 	visibility:hidden;
 }
 div#imgwraphide {
-	width: 11%;
+	width: 9%;
 	height: 100%;
 	text-align: center;
 	word-wrap:break word; 

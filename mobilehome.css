@@ -52,7 +52,7 @@ div#tablewrapper {
 	margin: auto;
 }
 div#imgwrap {
-	width: 78%;
+	width: 72%;
 	height: 100%;
 	text-align: center;
 	margin-top: 12px;
@@ -67,7 +67,7 @@ div#uploadhide {
 	visibility:hidden;
 }
 div#backwrap {
-	width: 11%;
+	width: 14%;
 	height: 100%;
 	text-align: center;
 	margin-top: 20px;
@@ -76,7 +76,7 @@ div#backwrap {
 }
 
 div#imgwraphide {
-	width: 10%;
+	width: 9%;
 	height: 100%;
 	text-align: center;
 	word-wrap:break-word; 
