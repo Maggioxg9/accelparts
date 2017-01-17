@@ -33,6 +33,8 @@
 		$uploadOk = 1;
 		$target_dir = "res/uploads/categories/Bally/";
 		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+		echo $target_dir;
+		echo $target_file;
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 		if (file_exists($target_file)) {
 			echo "Sorry, file already exists.";
