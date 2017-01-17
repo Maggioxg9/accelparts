@@ -31,7 +31,7 @@
 					$conn = null;
 				}
 		$uploadOk = 1;
-		$target_dir = "res/uploads/categories/Bally/";
+		$target_dir = "../uploads/categories/Bally/";
 		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 		if (file_exists($target_file)) {
