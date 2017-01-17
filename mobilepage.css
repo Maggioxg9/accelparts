@@ -65,7 +65,14 @@ div#backwrap {
 	margin-top: 20px;
 	display: inline-block;
 }
-
+div#uploadhide {
+	width: 5%;
+	height: 100%;
+	text-align: center;
+	word-wrap:break-word; 
+	margin-top: 20px;
+	visibility:hidden;
+}
 div#imgwraphide {
 	width: 11%;
 	height: 100%;

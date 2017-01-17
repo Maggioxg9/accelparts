@@ -58,6 +58,14 @@ div#imgwrap {
 	margin-top: 12px;
 	display: inline-block;
 }
+div#uploadhide {
+	width: 5%;
+	height: 100%;
+	text-align: center;
+	word-wrap:break-word; 
+	margin-top: 20px;
+	visibility:hidden;
+}
 div#backwrap {
 	width: 11%;
 	height: 100%;
