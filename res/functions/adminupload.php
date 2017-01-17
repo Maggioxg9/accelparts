@@ -8,30 +8,8 @@
 		exit();
 	}
 	if(count($_POST) >0){
-	
-				$servername = "localhost";
-				$username = "root";
-				$password = "accelmkgt123";
-				$dbname = "accelparts";
-				
-				try{
-					$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-					
-					$getcategories = $conn->prepare("select * from categories");
-					$getcategories->execute();
-					$allcategories = $getcategories->fetchAll(PDO::FETCH_ASSOC);
-					$_SESSION['categoryarray']=json_encode($allcategories);
-					$conn = null;
-				}catch(PDOException $e){
-					//print error details to screen
-					echo $result . "<br>" . $e->getMessage();
-
-					//close database connection
-					$conn = null;
-				}
 		$uploadOk = 1;
-		$target_dir = "res/uploads/categories/Bally/";
+		$target_dir = "res/uploads/categories/" . $_POST['categoryname'] . "/";
 		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 		if(isset($_POST["submit"])) {
