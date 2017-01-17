@@ -9,7 +9,7 @@
 	}
 	if(count($_POST) >0){
 		$uploadOk = 1;
-		$target_dir = "res/uploads/categories/" . $_POST['categoryname'] . "/";
+		$target_dir = "/var/www/html/accelparts/res/uploads/categories/" . $_POST['categoryname'] . "/";
 		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 		if(isset($_POST["submit"])) {
