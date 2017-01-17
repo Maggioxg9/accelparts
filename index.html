@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html><head>
 	<meta content='width=device-width, height=device-height, initial-scale=1' name='viewport'>
@@ -18,7 +22,7 @@
 					<div id="imgwraphide">
 							<a href= <?php if(isset($_SESSION['adminmode'])){ 
 												if($_SESSION['adminmode']==true){ 
-													echo "logoff.php";
+													echo "res/functions/logoff.php";
 												}else{
 													echo "login.html";
 												}
