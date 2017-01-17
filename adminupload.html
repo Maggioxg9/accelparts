@@ -7,6 +7,27 @@
 		header("Location: login.html");
 		exit();
 	}
+	$servername = "localhost";
+	$username = "root";
+	$password = "accelmkgt123";
+	$dbname = "accelparts";
+	
+	try{
+		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
+		$getcategories = $conn->prepare("select * from categories");
+		$getcategories->execute();
+		$allcategories = $getcategories->fetchAll(PDO::FETCH_ASSOC);
+		$_SESSION['categoryarray']=json_encode($allcategories);
+		$conn = null;
+	}catch(PDOException $e){
+		//print error details to screen
+		echo $result . "<br>" . $e->getMessage();
+
+		//close database connection
+		$conn = null;
+	}
 	
 ?>
 
@@ -63,7 +84,7 @@
 				</div>
 			</div>
 		<div id="content">
-		
+		<?php echo $_SESSION['categoryarray']; ?>
 		</div>
 	</div>
 </body>
