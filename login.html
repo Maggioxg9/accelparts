@@ -21,7 +21,34 @@
 				</div>
 			</div>
 		<div id="content">
-			
+			<div id="loginwrapper">
+				<div class="loginbox">
+					<?php if(isset($_SESSION['badlogin'])){
+						if($_SESSION['badlogin']==true){
+							echo "Please try again";
+						}
+						unset($_SESSION['badlogin']);
+					}
+					?>
+					<form action="res/functions/login.php" method="post">
+						<div class="logindetails">
+							<span class="formfont">Username:</span>
+								<input class="textbox" type="text" name="username" size="20" maxlength="20">
+						</div>
+						<div class="logindetails">
+							<span class="formfont">Password:</span>
+								<input class="textbox" type="password" name="password" size="20" maxlength="20">
+						</div>
+						<div>
+							<br>
+						</div>
+						<div id="loginbtn">
+							<br>
+							<input id="loginbutton" type="submit" value="Login">
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
