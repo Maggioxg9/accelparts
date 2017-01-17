@@ -227,3 +227,8 @@ div.details{
 div#loginwrapper {
 	width:100%;
 }
+input {
+	margin-bottom: .25em;
+	padding:.25em;
+	font-size: 1em;
+}

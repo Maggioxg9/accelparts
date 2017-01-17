@@ -58,6 +58,7 @@ div#imgwrap {
 	margin-top: 0px;
 	display: inline-block;
 }
+
 div#backwrap {
 	width: 14%;
 	height: 100%;
@@ -129,4 +130,9 @@ a {
 .menu:hover{
 	color:red;
 	font-style:italic;
+}
+input {
+	margin-bottom: .25em;
+	padding:.25em;
+	font-size: 1em;
 }
