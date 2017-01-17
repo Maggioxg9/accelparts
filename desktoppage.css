@@ -232,3 +232,21 @@ input {
 	padding:.25em;
 	font-size: 1em;
 }
+div.uploaddetails{
+	margin:10% 2% 0 0;
+	color:black;
+	text-align:center;
+	padding-top: 20px;
+	
+}
+div.uploadbox{
+	background: white;
+	width:600px;
+	margin: auto;
+	margin-top: 10%;
+}
+#uploadbtn{
+	text-align:center;
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
