@@ -84,21 +84,33 @@
 				</div>
 			</div>
 		<div id="content">
-			Select a Category: <select name="categoryname" form="formupload">
-				<option value="volvo">Bally</option>
-				<option value="saab">General</option>
-				<option value="opel">IGT</option>
-				<option value="audi">Marketing</option>
-				<option value="audi">NRT</option>
-				<option value="audi">Other</option>
-				<option value="audi">Spielo</option>
-				<option value="audi">WMS</option>
-			</select>
-			<form id="formupload" action="res/functions/adminupload.php" method="post" enctype="multipart/form-data">Select image to upload:
-				<input type="file" name="fileToUpload" id="fileToUpload">
-				<input type="submit" value="Upload Image" name="submit">
-			</form>
-
+			<div id="loginwrapper">
+				<div class="loginbox">
+					<div class="logindetails">
+							<span class="formfont">Select a Category:</span>
+							<select name="categoryname" form="formupload">
+								<option value="volvo">Bally</option>
+								<option value="saab">General</option>
+								<option value="opel">IGT</option>
+								<option value="audi">Marketing</option>
+								<option value="audi">NRT</option>
+								<option value="audi">Other</option>
+								<option value="audi">Spielo</option>
+								<option value="audi">WMS</option>
+							</select>
+					</div>
+					<form id="formupload" action="res/functions/adminupload.php" method="post" enctype="multipart/form-data">
+						<div class="logindetails">
+								<span class="formfont">Select image to upload:</span>
+								<input type="file" name="fileToUpload" id="fileToUpload">
+						</div>
+						<div id="loginbtn">
+							<br>
+							<input type="submit" value="Upload Image" name="submit">
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
