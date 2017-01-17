@@ -16,7 +16,7 @@
 						<a href="index.html"><img class="imglogo" src="res/htmlcontent/partsdept.png"></a>
 					</div>
 					<div id="imgwraphide">
-							<a href= <?php if(isset($_SESSION['adminmode'])){ if($_SESSION['adminmode']==true){ echo "logoff.php"; }else {echo "login.html";}else { echo "login.html";} ?>><span class="menu"><?php if(isset($_SESSION['adminmode'])){ if($_SESSION['adminmode']==true){ echo "Logout"; }else {echo "Admin Login";}else { echo "Admin Login";} ?></span></a>
+							<a href= <?php echo "login.html"?>><span class="menu"><?php echo "Admin Login"?></span></a>
 					</div>
 				</div>
 			</div>
