@@ -27,12 +27,7 @@
 		<div id="content">
 			<div id="loginwrapper">
 				<div class="loginbox">
-					<?php if(isset($_SESSION['badlogin'])){
-						if($_SESSION['badlogin']==true){
-							echo "Please try again";
-						}
-						unset($_SESSION['badlogin']);
-					?>
+					 
 					<form action="res/functions/login.php" method="post">
 						<div class="logindetails">
 							<span class="formfont">Username:</span>
