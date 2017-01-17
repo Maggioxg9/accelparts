@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html><head>
 	<meta content='width=device-width, height=device-height, initial-scale=1' name='viewport'>
@@ -15,8 +19,38 @@
 					<div id="imgwrap">
 						<a href="index.html"><img class="imglogo" src="res/htmlcontent/partsdept.png"></a>
 					</div>
+					<div id="uploadhide" style = <?php if(isset($_SESSION['adminmode'])){ 
+												if($_SESSION['adminmode']==true){ 
+													echo "display:inline-block";
+												}else{
+													echo "display:none";
+												}
+											}else{ 
+												echo "display:none";
+											} 
+										?>>
+							<a href="adminupload.html"><span class="menu">Upload</span></a>
+					</div>
 					<div id="imgwraphide">
-							<a href="login.html"><span class="menu">Admin Login</span></a>
+							<a href= <?php if(isset($_SESSION['adminmode'])){ 
+												if($_SESSION['adminmode']==true){ 
+													echo "res/functions/logoff.php";
+												}else{
+													echo "login.html";
+												}
+											}else{ 
+												echo "login.html";
+											} 
+										?>><span class="menu"><?php if(isset($_SESSION['adminmode'])){ 
+																		if($_SESSION['adminmode']==true){ 
+																			echo "Logout"; 
+																		}else{
+																			echo "Admin Login";
+																		}
+																	}else{
+																		echo "Admin Login";
+																	}
+																?></span></a>
 					</div>
 				</div>
 			</div>
