@@ -19,7 +19,16 @@
 					<div id="imgwrap">
 						<a href="index.html"><img class="imglogo" src="res/htmlcontent/partsdept.png"></a>
 					</div>
-					<div id="uploadhide">
+					<div id="uploadhide" style = <?php if(isset($_SESSION['adminmode'])){ 
+												if($_SESSION['adminmode']==true){ 
+													echo "display:inline-block";
+												}else{
+													echo "display:none";
+												}
+											}else{ 
+												echo "display:none";
+											} 
+										?>>
 							<a href="adminupload.html"><span class="menu">Upload</span></a>
 					</div>
 					<div id="imgwraphide">
