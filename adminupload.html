@@ -1,0 +1,43 @@
+<?php
+	session_start();
+	if(isset($_SESSION['adminmode']) && $_SESSION['adminmode']==true){
+		//user logged in proceed
+	}else{
+		//not logged in, redirect to login
+		header("Location: login.html");
+		exit();
+	}
+	
+?>
+
+<!DOCTYPE html>
+<html><head>
+	<meta content='width=device-width, height=device-height, initial-scale=1' name='viewport'>
+	<link rel="stylesheet" type="text/css" media="screen and (max-width: 879px)" href="mobilepage.css">
+	<link rel="stylesheet" type="text/css" media="screen and (min-width: 880px)" href="desktoppage.css">
+	<title>Accel Parts Department</title>
+</head>
+<body>
+	<div id="container">
+			<div id="nav">
+				<div id="navwrap">
+					<div id="backwrap">
+						<a href="index.html"><span class="menu">Home</span></a>
+					</div>
+					<div id="imgwrap">
+						<a href="index.html"><img class="imglogo" src="res/htmlcontent/partsdept.png"></a>
+					</div>
+					<div id="uploadhide">
+							<a href="adminupload.html"><span class="menu">Upload</span></a>
+					</div>
+					<div id="imgwraphide">
+							<a href="login.html"><span class="menu">Admin Login</span></a>
+					</div>
+				</div>
+			</div>
+		<div id="content">
+		
+		</div>
+	</div>
+</body>
+</html>
