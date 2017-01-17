@@ -9,6 +9,7 @@
 	}
 	if(count($_POST) >0){
 		$uploadOk = 1;
+		//test
 		echo "res/uploads/categories/" . $_POST['categoryname'] . "/";
 		exit();
 		$target_dir = "res/uploads/categories/" . $_POST['categoryname'] . "/";
