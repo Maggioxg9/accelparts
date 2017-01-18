@@ -43,26 +43,28 @@
 				}
 			}
 		}else{ //uploading part image and descriptions
-			echo "image";
-			exit();
 			$target_dir = "/var/www/html/accelparts/res/uploads/categories/" . $_POST['categoryname'] . "/";
 			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-			if(isset($_POST["submit"])) {
-				$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-				if($check !== false) {
-					$uploadOk = 1;
-				} else {
+			$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+			if($check == false) {
+				echo "check";
+				exit();
 				$uploadOk = 0;
-				}
-			}
+			} 
 			if (file_exists($target_file)) {
+				echo "exists";
+				exit();
 				$uploadOk = 0;
 			}
 			if ($_FILES["fileToUpload"]["size"] > 4194304) {
+				echo "size";
+				exit();
 				$uploadOk = 0;
 			}
 			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+				echo "type";
+				exit();
 				$uploadOk = 0;
 			}
 			if ($uploadOk == 0) {
@@ -104,6 +106,8 @@
 					header("Location: ../../adminupload.html");
 					exit();
 				} else {
+					echo "move";
+					exit();
 					$_SESSION['uploadsuccess']=false;
 					header("Location: ../../adminupload.html");
 					exit();
