@@ -81,7 +81,8 @@
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						
-						$getcategory = $conn-prepare("select categoryid from categories where categoryname= :categoryname");
+						$getcategory = $conn->prepare("select categoryid from categories where categoryname= :categoryname");
+						
 						$getcategory ->execute(array(":categoryname" => "$categoryname"));
 						$result = $getcategory->fetch(PDO::FETCH_ASSOC);
 						$categoryidresult = $result['categoryid'];
