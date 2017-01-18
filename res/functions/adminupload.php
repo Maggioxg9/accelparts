@@ -30,7 +30,7 @@
 		if ($_FILES["fileToUpload"]["size"] > 4194304) {
 			$uploadOk = 0;
 		}
-		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType !=".xlsm") {
+		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType !="xlsm") {
 			$uploadOk = 0;
 		}
 		if ($uploadOk == 0) {
