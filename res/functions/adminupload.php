@@ -13,11 +13,11 @@
 			$target_dir = "/var/www/html/accelparts/res/uploads/forms/";
 			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-			echo $target_dir ."\n";
-			echo $target_file ."\n";
-			echo $imageFileType ."\n";
-			echo $_FILES . "\n";
-			echo $_POST . "\n";
+			echo -e $target_dir .'\n';
+			echo -e $target_file .'\n';
+			echo -e $imageFileType .'\n'
+			echo -e json_encode($_FILES) . '\n';
+			echo -e json_encode($_POST) . '\n';
 			exit();
 			
 			if(isset($_POST["submit"])) {
