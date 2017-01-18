@@ -11,7 +11,7 @@
 		$uploadOk = 1;
 		if($_POST['categoryname']=='Form'){
 			$target_dir = "/var/www/html/accelparts/res/uploads/forms/";
-			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 			if(isset($_POST["submit"])) {
 				if ($_FILES["fileToUpload"]["size"] > 4194304) {
 					$uploadOk = 0;
