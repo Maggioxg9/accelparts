@@ -9,8 +9,12 @@
 		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
-		$getimages = $conn->prepare("select * from parts");
-		$getimages->execute();
+		$getcategory = $conn->prepare("select categoryid from categories where categoryname= :categoryname");			
+		$getcategory ->execute(array(":categoryname" => "Other"));
+		$result = $getcategory->fetch(PDO::FETCH_ASSOC);
+		$categoryidresult = $result['categoryid'];
+		$getimages = $conn->prepare("select * from parts where categoryid= :categoryid");
+		$getimages->execute(array(":categoryid" => "$categoryidresult"));
 		$allimages = $getimages->fetchAll(PDO::FETCH_ASSOC);
 		$_SESSION['imagearray']=json_encode($allimages);
 		$conn = null;
