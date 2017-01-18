@@ -13,7 +13,7 @@
 			$target_dir = "/var/www/html/accelparts/res/uploads/forms/";
 			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-			echo $imageFileType;
+			print_r(pathinfo($target_file,PATHINFO_EXTENSION));
 			exit();
 			
 			if(isset($_POST["submit"])) {
