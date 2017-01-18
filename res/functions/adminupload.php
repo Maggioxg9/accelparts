@@ -70,7 +70,8 @@
 					$accelnumber = htmlspecialchars($_POST['accelnumber']);
 					$categoryname = htmlspecialchars($_POST['categoryname']);
 					$imgpath = $target_file;
-					chmod($imgpath, 0755);
+					//chown($imgpath,apache);
+					chmod($imgpath, 0777);
 					try{
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
