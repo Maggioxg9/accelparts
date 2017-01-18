@@ -9,7 +9,11 @@
 	}
 	if(count($_POST) >0){
 		$uploadOk = 1;
-		$target_dir = "/var/www/html/accelparts/res/uploads/categories/" . $_POST['categoryname'] . "/";
+		if($_POST['categoryname']=='Form'){
+			$target_dir = "/var/www/html/accelparts/res/uploads/forms/";
+		}else{
+			$target_dir = "/var/www/html/accelparts/res/uploads/categories/" . $_POST['categoryname'] . "/";
+		}
 		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 		if(isset($_POST["submit"])) {
@@ -26,7 +30,7 @@
 		if ($_FILES["fileToUpload"]["size"] > 4194304) {
 			$uploadOk = 0;
 		}
-		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType !=".xlsm") {
 			$uploadOk = 0;
 		}
 		if ($uploadOk == 0) {

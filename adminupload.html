@@ -94,7 +94,7 @@
 									echo '</script>';
 								}else{
 									echo '<script language="javascript">';
-									echo 'alert("Upload Failed, only image files <4MB are acceptable")';
+									echo 'alert("Upload Failed, please try again or contact the administrator")';
 									echo '</script>';
 								}
 								unset($_SESSION['uploadsuccess']);
@@ -102,6 +102,7 @@
 						?>
 							<span class="formfont">Select a Category:</span>
 							<select name="categoryname" form="formupload">
+								<option valie="Form">Form></option>
 								<option value="Bally">Bally</option>
 								<option value="General">General</option>
 								<option value="IGT">IGT</option>
