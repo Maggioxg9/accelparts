@@ -10,6 +10,8 @@
 	if(count($_POST) >0){
 		$uploadOk = 1;
 		if($_POST['categoryname']=='Form'){ //uploading part request form
+			echo "form";
+			exit();
 			$target_dir = "/var/www/html/accelparts/res/uploads/forms/";
 			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -41,6 +43,8 @@
 				}
 			}
 		}else{ //uploading part image and descriptions
+			echo "image";
+			exit();
 			$target_dir = "/var/www/html/accelparts/res/uploads/categories/" . $_POST['categoryname'] . "/";
 			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
