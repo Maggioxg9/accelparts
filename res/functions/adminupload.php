@@ -87,7 +87,7 @@
 						$categoryidresult = $result['categoryid'];
 						
 						$insertimages = $conn->prepare("insert into parts (description, accelnumber,categoryid, imgpath) values (:description,:accelnumber, :categoryid, :imgpath)");
-						$insertimages->execute(array(":description" => "$description", ":accelnumber" => "$accelnumber", ":categoryid" => "$categoryidresult", ":imgpath" = > "$imgpath"));
+						$insertimages->execute(array(":description" => "$description", ":accelnumber" => "$accelnumber", ":categoryid" => "$categoryidresult", ":imgpath" => "$imgpath"));
 						$conn = null;
 					}catch(PDOException $e){
 						//print error details to screen
