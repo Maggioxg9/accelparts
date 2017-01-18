@@ -26,6 +26,9 @@
 					exit();
 					// if everything is ok, try to upload file
 				}else {
+					//change filename to constant for URL
+					$target_file = $target_dir . "Part-Request-Form.xlsm";
+					//upload magic
 					if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 						$_SESSION['uploadsuccess']=true;
 						header("Location: ../../adminupload.html");
