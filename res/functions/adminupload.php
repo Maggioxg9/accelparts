@@ -10,8 +10,6 @@
 	if(count($_POST) >0){
 		$uploadOk = 1;
 		if($_POST['categoryname']=='Form'){ //uploading part request form
-			echo "form";
-			exit();
 			$target_dir = "/var/www/html/accelparts/res/uploads/forms/";
 			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -48,23 +46,12 @@
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 			$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 			if($check == false) {
-				echo "check";
-				exit();
 				$uploadOk = 0;
 			} 
-			if (file_exists($target_file)) {
-				echo "exists";
-				exit();
-				$uploadOk = 0;
-			}
 			if ($_FILES["fileToUpload"]["size"] > 4194304) {
-				echo "size";
-				exit();
 				$uploadOk = 0;
 			}
 			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-				echo "type";
-				exit();
 				$uploadOk = 0;
 			}
 			if ($uploadOk == 0) {
@@ -83,6 +70,7 @@
 					$accelnumber = htmlspecialchars($_POST['accelnumber']);
 					$categoryname = htmlspecialchars($_POST['categoryname']);
 					$imgpath = $target_file;
+					chmod($imgpath, 0755);
 					try{
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -106,8 +94,6 @@
 					header("Location: ../../adminupload.html");
 					exit();
 				} else {
-					echo "move";
-					exit();
 					$_SESSION['uploadsuccess']=false;
 					header("Location: ../../adminupload.html");
 					exit();
