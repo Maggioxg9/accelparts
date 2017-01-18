@@ -69,9 +69,9 @@
 					$description = htmlspecialchars($_POST['description']);
 					$accelnumber = htmlspecialchars($_POST['accelnumber']);
 					$categoryname = htmlspecialchars($_POST['categoryname']);
-					$imgpath = $target_file;
-					//chown($imgpath,apache);
-					chmod($imgpath, 0777);
+					$imgpath = "res/uploads/categories/" . $categoryname . "/" . basename($_FILES["fileToUpload"]["name"]);
+					
+					chmod($target_file, 0775);
 					try{
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
