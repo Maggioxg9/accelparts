@@ -13,6 +13,13 @@
 			$target_dir = "/var/www/html/accelparts/res/uploads/forms/";
 			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+			echo $target_dir ."\n";
+			echo $target_file ."\n";
+			echo $imageFileType ."\n";
+			echo $_FILES . "\n";
+			echo $_POST . "\n";
+			exit();
+			
 			if(isset($_POST["submit"])) {
 				if ($_FILES["fileToUpload"]["size"] > 4194304) {
 					$uploadOk = 0;
@@ -25,7 +32,7 @@
 					header("Location: ../../adminupload.html");
 					exit();
 					// if everything is ok, try to upload file
-				} else {
+				}else {
 					if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 						$_SESSION['uploadsuccess']=true;
 						header("Location: ../../adminupload.html");
