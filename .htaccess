@@ -4,4 +4,9 @@ AddHandler php-script .php .html
 AddHandler php5-script .php .html .htm
 
 ErrorDocument 404 /notfound.html
-
+ErrorDocument 400 /notfound.html
+ErrorDocument 401 /notfound.html
+ErrorDocument 403 /notfound.html
+ErrorDocument 500 /notfound.html
+ErrorDocument 502 /notfound.html
+ErrorDocument 504 /notfound.html
