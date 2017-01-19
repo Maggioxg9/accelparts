@@ -9,6 +9,8 @@
 	}
 	if(count($_POST) >0){
 		$uploadOk = 1;
+		$_SESSION['selected']=htmlspecialchars($_POST['categoryname']);
+		
 		if($_POST['categoryname']=='Form'){ //uploading part request form
 			$target_dir = "/var/www/html/accelparts/res/uploads/forms/";
 			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
