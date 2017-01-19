@@ -3,10 +3,12 @@ AddHandler application/x-httpd-php .html
 AddHandler php-script .php .html
 AddHandler php5-script .php .html .htm
 
-ErrorDocument 404 /notfound.html
-ErrorDocument 400 /notfound.html
-ErrorDocument 401 /notfound.html
-ErrorDocument 403 /notfound.html
-ErrorDocument 500 /notfound.html
-ErrorDocument 502 /notfound.html
-ErrorDocument 504 /notfound.html
+Options -Indexes
+
+ErrorDocument 404 http://52.91.255.179/notfound.html
+ErrorDocument 400 http://52.91.255.179/notfound.html
+ErrorDocument 401 http://52.91.255.179/notfound.html
+ErrorDocument 403 http://52.91.255.179/notfound.html
+ErrorDocument 500 http://52.91.255.179/notfound.html
+ErrorDocument 502 http://52.91.255.179/notfound.html
+ErrorDocument 504 http://52.91.255.179/notfound.html
