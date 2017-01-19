@@ -253,7 +253,7 @@ div.uploadbox{
 }
 div#notfounddiv{
 	background-color: white;
-	margin:10% 2% 0 0;
+	margin:auto;
 	color:black;
 	text-align:center;
 	padding-top: 20px;
