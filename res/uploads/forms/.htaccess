@@ -6,5 +6,5 @@ AuthType Basic
 Require valid-user
 </Files>
 
-ErrorDocument 401 /notfound.html
-ErrorDocument 403 /notfound.html
+ErrorDocument 401 /../../../../notfound.html
+ErrorDocument 403 /../../../../notfound.html
