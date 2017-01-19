@@ -5,6 +5,3 @@ AuthName "Protected File"
 AuthType Basic
 Require valid-user
 </Files>
-
-ErrorDocument 401 /var/www/html/accelparts/notfound.html
-ErrorDocument 403 /var/www/html/accelparts/notfound.html
