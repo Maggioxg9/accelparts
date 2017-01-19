@@ -252,11 +252,16 @@ div.uploadbox{
 	padding-bottom: 20px;
 }
 div#notfounddiv{
-	background-color: white;
 	margin:auto;
-	color:black;
 	text-align:center;
-	padding-top: 20px;
-	height:30%;
-	width:30%;
+	margin-top:10%;
+	height:200px;
+	width:450px;
+}
+div#notfoundtext{
+	text-align:center;
+	background-color: white;
+	height:80%;
+	width:80%;
+	font-size: 3em;
 }
