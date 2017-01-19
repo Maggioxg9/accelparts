@@ -73,10 +73,11 @@
 					$categoryname = htmlspecialchars($_POST['categoryname']);
 					$imgpath = "res/uploads/categories/" . $categoryname . "/" . basename($_FILES["fileToUpload"]["name"]);
 					chmod($target_file, 0777);
-					if($imageFileType == "jpg"){
-						jpegoptim()
-					}
-					chmod($target_file, 0775);
+					//if($imageFileType == "jpg"){
+					//	$optimize=shell_exec('jpegoptim "$target_file"');
+					//}elseif($imageFileType == "png"){
+					//	$optimize=shell_exec('optipng "$target_file"');
+					//}
 					try{
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
