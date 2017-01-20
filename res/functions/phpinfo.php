@@ -1,6 +1,6 @@
 <?php
 if( class_exists("Imagick") )
 {
-    echo "Imagick is installed"
+    echo "Imagick is installed";
 }
 ?>
