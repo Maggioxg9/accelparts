@@ -36,10 +36,10 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 Options -Indexes
 
-ErrorDocument 404 /notfound.html
-ErrorDocument 400 /notfound.html
-ErrorDocument 401 /notfound.html
-ErrorDocument 403 /notfound.html
-ErrorDocument 500 /notfound.html
-ErrorDocument 502 /notfound.html
-ErrorDocument 504 /notfound.html
+ErrorDocument 404 https://107.23.42.232/notfound.html
+ErrorDocument 400 https://107.23.42.232/notfound.html
+ErrorDocument 401 https://107.23.42.232/notfound.html
+ErrorDocument 403 https://107.23.42.232/notfound.html
+ErrorDocument 500 https://107.23.42.232/notfound.html
+ErrorDocument 502 https://107.23.42.232/notfound.html
+ErrorDocument 504 https://107.23.42.232/notfound.html
