@@ -1,3 +1,6 @@
 <?php
-echo phpinfo();
+if( class_exists("Imagick") )
+{
+    echo "Imagick is installed"
+}
 ?>
