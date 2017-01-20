@@ -30,11 +30,9 @@ AddOutputFilterByType DEFLATE application/rss+xml
 AddOutputFilterByType DEFLATE application/javascript
 AddOutputFilterByType DEFLATE application/x-javascript
 
-<IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-</IfModule>
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 
 
 Options -Indexes
 
