@@ -72,9 +72,7 @@
 					$accelnumber = htmlspecialchars($_POST['accelnumber']);
 					$categoryname = htmlspecialchars($_POST['categoryname']);
 					$imgpath = "res/uploads/categories/" . $categoryname . "/" . basename($_FILES["fileToUpload"]["name"]);
-					$thumb = "/var/www/html/accelparts/res/uploads/categories/" . $categoryname . "/" . basename($_FILES["fileToUpload"]["name"]) . "resize.jpg";
-					echo $thumb;
-					exit();
+					$thumb = "/var/www/html/accelparts/res/uploads/categories/" . $categoryname . "/thumb_" . basename($_FILES["fileToUpload"]["name"]);
 					chmod($target_file, 0777);
 					$img = new Imagick($target_file);
 					$img->resizeImage(300,300,Imagick::FILTER_LANCZOS,1,TRUE);
