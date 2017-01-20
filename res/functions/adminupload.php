@@ -76,6 +76,7 @@
 					chmod($target_file, 0777);
 					$img = new Imagick($target_file);
 					$img->resizeImage(300,300,Imagick::FILTER_LANCZOS,1,TRUE);
+					$img->setImageFormat("jpeg");
 					echo $img;
 					exit();
 					try{
