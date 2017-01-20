@@ -77,7 +77,7 @@
 					$img = new Imagick($target_file);
 					$img->resizeImage(300,300,Imagick::FILTER_LANCZOS,1,TRUE);
 					$img->writeImage($thumb);
-					exit();
+					chmod($thumb, 0777);
 					try{
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
