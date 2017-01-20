@@ -72,11 +72,13 @@
 					$accelnumber = htmlspecialchars($_POST['accelnumber']);
 					$categoryname = htmlspecialchars($_POST['categoryname']);
 					$imgpath = "res/uploads/categories/" . $categoryname . "/" . basename($_FILES["fileToUpload"]["name"]);
-					$thumb = "res/uploads/categories/" . $categoryname . "/" . basename($_FILES["fileToUpload"]["name"]) . "resize.jpg";
+					$thumb = "/var/www/html/accelparts/res/uploads/categories/" . $categoryname . "/" . basename($_FILES["fileToUpload"]["name"]) . "resize.jpg";
+					echo $thumb;
+					exit();
 					chmod($target_file, 0777);
 					$img = new Imagick($target_file);
 					$img->resizeImage(300,300,Imagick::FILTER_LANCZOS,1,TRUE);
-					$img->writeImage("test.jpg");
+					$img->writeImage($thumb);
 					exit();
 					try{
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
