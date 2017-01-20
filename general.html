@@ -13,7 +13,7 @@
 		$getcategory ->execute(array(":categoryname" => "General"));
 		$result = $getcategory->fetch(PDO::FETCH_ASSOC);
 		$categoryidresult = $result['categoryid'];
-		$getimages = $conn->prepare("select * from parts where categoryid= :categoryid");
+		$getimages = $conn->prepare("select * from parts where categoryid= :categoryid order by description ASC");
 		$getimages->execute(array(":categoryid" => "$categoryidresult"));
 		$allimages = $getimages->fetchAll(PDO::FETCH_ASSOC);
 		$_SESSION['imagearray']=json_encode($allimages);
