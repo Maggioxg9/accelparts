@@ -75,9 +75,8 @@
 					$thumb = "res/uploads/categories/" . $categoryname . "/" . basename($_FILES["fileToUpload"]["name"]) . "resize.jpg";
 					chmod($target_file, 0777);
 					$img = new Imagick($target_file);
-					$img->resizeImage(300,300,Imagick::FILTER_LANCZOS,1,TRUE);
-					$img->setImageFormat("jpeg");
-					echo $img;
+					//$img->resizeImage(300,300,Imagick::FILTER_LANCZOS,1,TRUE);
+					$img->writeImage("test.jpg");
 					exit();
 					try{
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
