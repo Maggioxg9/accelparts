@@ -75,7 +75,7 @@
 					$thumb = "/var/www/html/accelparts/res/uploads/categories/" . $categoryname . "/thumb_" . basename($_FILES["fileToUpload"]["name"]);
 					chmod($target_file, 0777);
 					$img = new Imagick($target_file);
-					$img->resizeImage(300,300,Imagick::FILTER_LANCZOS,1,TRUE);
+					$img->resizeImage(285,285,Imagick::FILTER_LANCZOS,1,TRUE);
 					$img->writeImage($thumb);
 					chmod($thumb, 0777);
 					try{
@@ -88,8 +88,8 @@
 						$result = $getcategory->fetch(PDO::FETCH_ASSOC);
 						$categoryidresult = $result['categoryid'];
 						
-						$insertimages = $conn->prepare("insert into parts (description, accelnumber,categoryid, imgpath) values (:description,:accelnumber, :categoryid, :imgpath)");
-						$insertimages->execute(array(":description" => "$description", ":accelnumber" => "$accelnumber", ":categoryid" => "$categoryidresult", ":imgpath" => "$imgpath"));
+						$insertimages = $conn->prepare("insert into parts (description, accelnumber,categoryid, imgpath, imgthumbpath) values (:description,:accelnumber, :categoryid, :imgpath, :imgthumbpath)");
+						$insertimages->execute(array(":description" => "$description", ":accelnumber" => "$accelnumber", ":categoryid" => "$categoryidresult", ":imgpath" => "$imgpath", ":imgthumbpath" => "$thumb"));
 						$conn = null;
 					}catch(PDOException $e){
 						//print error details to screen
