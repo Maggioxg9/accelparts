@@ -80,6 +80,7 @@
 					$img->resizeImage(285,285,Imagick::FILTER_LANCZOS,1,TRUE);
 					$img->writeImage($thumb);
 					chmod($thumb, 0777);
+					$img = new Imagick($target_file);
 					$img->resizeImage(100,100,Imagick::FILTER_LANCZOS,1,TRUE);
 					echo "resized";
 					$img->writeImage($thumbadmin);
