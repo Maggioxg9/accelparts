@@ -76,11 +76,10 @@
 					$thumbpath = "res/uploads/categories/" . $categoryname . "/thumb_" . basename($_FILES["fileToUpload"]["name"]);
 					$thumbadmin = "/var/www/html/accelparts/res/uploads/categories/" . $categoryname . "/thumbadmin_" . basename($_FILES["fileToUpload"]["name"]);
 					$thumbadminpath = "res/uploads/categories/" . $categoryname . "/thumbadmin_" . basename($_FILES["fileToUpload"]["name"]);
+					chmod($target_file, 0777);
 					
 					$img = new Imagick($target_file);
 					$imgadmin = clone $img;
-					$imgsolo = clone $img;
-					unlink($target_file);
 					
 					$img->resizeImage(285,285,Imagick::FILTER_LANCZOS,1,TRUE);
 					$img->setImageCompression(Imagick::COMPRESSION_JPEG); 
@@ -91,17 +90,12 @@
 					
 					$imgadmin->resizeImage(100,100,Imagick::FILTER_LANCZOS,1,TRUE);
 					$imgadmin->setImageCompression(Imagick::COMPRESSION_JPEG); 
-					$imgadmin->setImageCompressionQuality(40); 
+					$imgadmin->setImageCompressionQuality(40);					
 					$imgadmin->stripImage(); 
 					$imgadmin->writeImage($thumbadmin);
 					chmod($thumbadmin, 0777);
 					
-					$imgsolo->resizeImage(1600,1600,Imagick::FILTER_LANCZOS,1,TRUE);
-					$imgsolo->setImageCompression(Imagick::COMPRESSION_JPEG); 
-					$imgsolo->setImageCompressionQuality(75);
-					$imgsolo->stripImage(); 
-					$imgsolo->writeImage($target_file);
-					chmod($target_file, 0777);
+					shell_exec("jpegoptim --max=45 --strip-all --all-progressive ".$target_file);
 					
 					try{
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
