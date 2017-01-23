@@ -95,7 +95,7 @@
 						shell_exec("jpegoptim --max=45 --strip-all --all-progressive ".$target_file);
 					}
 					if($imageFileType == "png"){
-						shell_exec("optipng -o2 -strip all".$target_file);
+						//shell_exec("optipng -o2 -strip all".$target_file);
 					}
 					
 					try{
