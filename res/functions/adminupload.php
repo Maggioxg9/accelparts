@@ -82,8 +82,6 @@
 					$imgadmin = clone $img;
 					
 					$img->resizeImage(285,285,Imagick::FILTER_LANCZOS,1,TRUE);
-					$img->setImageCompression(Imagick::COMPRESSION_JPEG); 
-					$img->setImageCompressionQuality(75); 
 					$img->stripImage(); 
 					$img->writeImage($thumb);
 					chmod($thumb, 0777);
@@ -95,7 +93,8 @@
 					
 					if($imageFileType == "jpg"){
 						shell_exec("jpegoptim --max=45 --strip-all --all-progressive ".$target_file);
-					}else if($imageFileType == "png"){
+					}
+					if($imageFileType == "png"){
 						shell_exec("optipng -o2 -strip all".$target_file);
 					}
 					
