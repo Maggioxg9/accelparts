@@ -63,6 +63,11 @@
 						var celldiv = document.createElement("div");
 						celldiv.setAttribute('class', "celldiv");
 						
+						var adminform = document.createElement("form");
+						adminform.setAttribute("action", ""+<?php echo $_SERVER["PHP_SELF"]; ?>);
+						adminform.setAttribute("method", "post");
+						adminform.setAttribute("onsubmit", "updatepart()");
+						
 						var imgcontainer = document.createElement("div");
 						imgcontainer.setAttribute('class', "imgcontainer");
 						
@@ -74,18 +79,19 @@
 						
 						imglink.appendChild(imgcell);
 						imgcontainer.appendChild(imglink);
-						celldiv.appendChild(imgcontainer);
+						adminform.appendChild(imgcontainer);
 						
 						var descriptioncell = document.createElement("div");
 						descriptioncell.setAttribute('class', "descriptioncell");
 						descriptioncell.textContent=imagedata[i].description;
-						celldiv.appendChild(descriptioncell);
+						adminform.appendChild(descriptioncell);
 						
 						var accelnumbercell = document.createElement("div");
 						accelnumbercell.setAttribute('class', "accelnumbercell");
 						accelnumbercell.textContent=imagedata[i].accelnumber;
-						celldiv.appendChild(accelnumbercell);
+						adminform.appendChild(accelnumbercell);
 						
+						celldiv.appendChild(adminform);
 						cell.appendChild(celldiv);
 					}
 				}
