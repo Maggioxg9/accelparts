@@ -95,7 +95,11 @@
 					$imgadmin->writeImage($thumbadmin);
 					chmod($thumbadmin, 0777);
 					
-					shell_exec("jpegoptim --max=45 --strip-all --all-progressive ".$target_file);
+					if($imageFileType == "jpg"){
+						shell_exec("jpegoptim --max=45 --strip-all --all-progressive ".$target_file);
+					}else if($imageFileType == "png"){
+						shell_exec("optipng -o2 -strip all".$target_file);
+					}
 					
 					try{
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
