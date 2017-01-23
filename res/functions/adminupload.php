@@ -80,6 +80,7 @@
 					
 					$img = new Imagick($target_file);
 					$imgadmin = clone $img;
+					$imgsolo = clone $img;
 					
 					$img->resizeImage(285,285,Imagick::FILTER_LANCZOS,1,TRUE);
 					$img->setImageCompression(Imagick::COMPRESSION_JPEG); 
@@ -94,6 +95,11 @@
 					$imgadmin->stripImage(); 
 					$imgadmin->writeImage($thumbadmin);
 					chmod($thumbadmin, 0777);
+					
+					$imgsolo->setImageCompression(Imagick::COMPRESSION_JPEG); 
+					$imgsolo->setImageCompressionQuality(75);
+					$imgsolo->stripImage(); 
+					$imgsolo->writeImage($target_file);
 					
 					try{
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
