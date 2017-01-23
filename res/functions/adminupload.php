@@ -74,11 +74,17 @@
 					$imgpath = "res/uploads/categories/" . $categoryname . "/" . basename($_FILES["fileToUpload"]["name"]);
 					$thumb = "/var/www/html/accelparts/res/uploads/categories/" . $categoryname . "/thumb_" . basename($_FILES["fileToUpload"]["name"]);
 					$thumbpath = "res/uploads/categories/" . $categoryname . "/thumb_" . basename($_FILES["fileToUpload"]["name"]);
+					$thumbadmin = "res/uploads/categories/" . $categoryname . "/thumbadmin_" . basename($_FILES["fileToUpload"]["name"]);
 					chmod($target_file, 0777);
 					$img = new Imagick($target_file);
 					$img->resizeImage(285,285,Imagick::FILTER_LANCZOS,1,TRUE);
 					$img->writeImage($thumb);
 					chmod($thumb, 0777);
+					$imgadmin = new Imagick($target_file);
+					$imgadmin->resizeImage(100,100,Imagick::FILTER_LANCZOS,1,TRUE);
+					$imgadmin->writeImage($thumbadmin);
+					chmod($thumbadmin, 0777);
+					
 					try{
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 						$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -89,8 +95,8 @@
 						$result = $getcategory->fetch(PDO::FETCH_ASSOC);
 						$categoryidresult = $result['categoryid'];
 						
-						$insertimages = $conn->prepare("insert into parts (description, accelnumber,categoryid, imgpath, imgthumbpath) values (:description,:accelnumber, :categoryid, :imgpath, :imgthumbpath)");
-						$insertimages->execute(array(":description" => "$description", ":accelnumber" => "$accelnumber", ":categoryid" => "$categoryidresult", ":imgpath" => "$imgpath", ":imgthumbpath" => "$thumbpath"));
+						$insertimages = $conn->prepare("insert into parts (description, accelnumber,categoryid, imgpath, imgthumbpath, imgadmin) values (:description,:accelnumber, :categoryid, :imgpath, :imgthumbpath, :imgadmin)");
+						$insertimages->execute(array(":description" => "$description", ":accelnumber" => "$accelnumber", ":categoryid" => "$categoryidresult", ":imgpath" => "$imgpath", ":imgthumbpath" => "$thumbpath", ":imgadmin" => "$thumbadmin"));
 						$conn = null;
 					}catch(PDOException $e){
 						//print error details to screen
