@@ -96,6 +96,7 @@
 					$imgadmin->writeImage($thumbadmin);
 					chmod($thumbadmin, 0777);
 					
+					$imgsolo->resizeImage(1600,1600,Imagick::FILTER_LANCZOS,1,TRUE);
 					$imgsolo->setImageCompression(Imagick::COMPRESSION_JPEG); 
 					$imgsolo->setImageCompressionQuality(75);
 					$imgsolo->stripImage(); 
