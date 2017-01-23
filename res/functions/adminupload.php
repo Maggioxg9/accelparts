@@ -88,9 +88,7 @@
 					$img->writeImage($thumb);
 					chmod($thumb, 0777);
 					
-					$imgadmin->resizeImage(100,100,Imagick::FILTER_LANCZOS,1,TRUE);
-					$imgadmin->setImageCompression(Imagick::COMPRESSION_JPEG); 
-					$imgadmin->setImageCompressionQuality(40);					
+					$imgadmin->resizeImage(100,100,Imagick::FILTER_LANCZOS,1,TRUE);					
 					$imgadmin->stripImage(); 
 					$imgadmin->writeImage($thumbadmin);
 					chmod($thumbadmin, 0777);
