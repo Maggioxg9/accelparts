@@ -79,7 +79,7 @@
 					chmod($target_file, 0777);
 					
 					$img = new Imagick($target_file);
-					$imgadmin = $img->clone;
+					$imgadmin = clone $img;
 					
 					$img->resizeImage(285,285,Imagick::FILTER_LANCZOS,1,TRUE);
 					$img->setImageCompression(Imagick::COMPRESSION_JPEG); 
