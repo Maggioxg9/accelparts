@@ -81,8 +81,12 @@
 					$img->writeImage($thumb);
 					chmod($thumb, 0777);
 					$img->resizeImage(100,100,Imagick::FILTER_LANCZOS,1,TRUE);
+					echo "resized";
 					$img->writeImage($thumbadmin);
+					echo "wrote";
 					chmod($thumbadmin, 0777);
+					echo "done";
+					exit;
 					
 					try{
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
