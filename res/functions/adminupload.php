@@ -74,20 +74,26 @@
 					$imgpath = "res/uploads/categories/" . $categoryname . "/" . basename($_FILES["fileToUpload"]["name"]);
 					$thumb = "/var/www/html/accelparts/res/uploads/categories/" . $categoryname . "/thumb_" . basename($_FILES["fileToUpload"]["name"]);
 					$thumbpath = "res/uploads/categories/" . $categoryname . "/thumb_" . basename($_FILES["fileToUpload"]["name"]);
-					$thumbadmin = "res/uploads/categories/" . $categoryname . "/thumbadmin_" . basename($_FILES["fileToUpload"]["name"]);
+					$thumbadmin = "/var/www/html/accelparts/res/uploads/categories/" . $categoryname . "/thumbadmin_" . basename($_FILES["fileToUpload"]["name"]);
+					$thumbadminpath = "res/uploads/categories/" . $categoryname . "/thumbadmin_" . basename($_FILES["fileToUpload"]["name"]);
 					chmod($target_file, 0777);
+					
 					$img = new Imagick($target_file);
+					$imgadmin = $img->clone;
+					
 					$img->resizeImage(285,285,Imagick::FILTER_LANCZOS,1,TRUE);
+					$img->setImageCompression(Imagick::COMPRESSION_JPEG); 
+					$img->setImageCompressionQuality(75); 
+					$img->stripImage(); 
 					$img->writeImage($thumb);
 					chmod($thumb, 0777);
-					$img = new Imagick($target_file);
-					$img->resizeImage(100,100,Imagick::FILTER_LANCZOS,1,TRUE);
-					echo "resized";
-					$img->writeImage($thumbadmin);
-					echo "wrote";
+					
+					$imgadmin->resizeImage(100,100,Imagick::FILTER_LANCZOS,1,TRUE);
+					$imgadmin->setImageCompression(Imagick::COMPRESSION_JPEG); 
+					$imgadmin->setImageCompressionQuality(40); 
+					$imgadmin->stripImage(); 
+					$imgadmin->writeImage($thumbadmin);
 					chmod($thumbadmin, 0777);
-					echo "done";
-					exit;
 					
 					try{
 						$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -100,7 +106,7 @@
 						$categoryidresult = $result['categoryid'];
 						
 						$insertimages = $conn->prepare("insert into parts (description, accelnumber,categoryid, imgpath, imgthumbpath, imgadmin) values (:description,:accelnumber, :categoryid, :imgpath, :imgthumbpath, :imgadmin)");
-						$insertimages->execute(array(":description" => "$description", ":accelnumber" => "$accelnumber", ":categoryid" => "$categoryidresult", ":imgpath" => "$imgpath", ":imgthumbpath" => "$thumbpath", ":imgadmin" => "$thumbadmin"));
+						$insertimages->execute(array(":description" => "$description", ":accelnumber" => "$accelnumber", ":categoryid" => "$categoryidresult", ":imgpath" => "$imgpath", ":imgthumbpath" => "$thumbpath", ":imgadmin" => "$thumbadminpath"));
 						$conn = null;
 					}catch(PDOException $e){
 						//print error details to screen
