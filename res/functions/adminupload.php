@@ -4,7 +4,7 @@
 		//user logged in proceed
 	}else{
 		//not logged in, redirect to login
-		header("Location: login.html");
+		header("Location: ../../login.html");
 		exit();
 	}
 	if(count($_POST) >0){
@@ -127,5 +127,8 @@
 				}
 			}
 		}
+	}else{ //not posted
+		header("Location: ../../index.html");
+		exit();
 	}
 ?>
