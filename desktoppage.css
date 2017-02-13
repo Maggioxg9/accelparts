@@ -243,8 +243,6 @@ div.uploadbox{
 	background: white;
 	width:600px;
 	margin: auto;
-	display: inline-block;
-	margin-top: 5%;
 }
 #uploadbtn{
 	text-align:center;
