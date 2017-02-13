@@ -127,7 +127,7 @@
 				}
 			}
 		}
-	}else{ //not posted
+	}else{ // request didnt come from post, redirect to index
 		header("Location: ../../index.html");
 		exit();
 	}
