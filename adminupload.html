@@ -21,8 +21,12 @@
 		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 		$getcategories = $conn->prepare("select * from categories");
+		$getpartarray = $conn ->prepare("Select * from parts");
 		$getcategories->execute();
+		$getpartarray->execute();
 		$allcategories = $getcategories->fetchAll(PDO::FETCH_ASSOC);
+		$allpartarray = $getpartarray->fetchAll(PDO::FETCH_ASSOC);
+		$_SESSION['partarray'] = json_encode($allpartarray);
 		$_SESSION['categoryarray']=json_encode($allcategories);
 		$conn = null;
 	}catch(PDOException $e){
@@ -145,6 +149,7 @@
 								<div class="uploadbox">
 									<div class="uploaddetails">
 									<span class="formfont">Remove Items:</span>
+									<?php echo $_SESSION['partarray']; ?>
 									</div>
 								</div>
 							</td>
